@@ -10,14 +10,12 @@ header{
   margin-right:10px;
   padding-right:20px;
   border-radius: 10px;
-  position:absolute;
   width:100%;
 }
 
 .header-right a{
   font-family:'Oswald';
   font-size:30px;
-  position:absolute;
 }
 
 .middle-message{
@@ -28,9 +26,8 @@ header{
 .index-background{
   opacity:0.9;
   height:800px;
-  size:cover;
+  widows: 100%;
   margin:0px;
   text-align:center;
-  position:relative;
 }
 
