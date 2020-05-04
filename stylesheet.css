@@ -11,6 +11,7 @@ header{
   margin-right:10px;
   padding-right:20px;
   border-radius: 10px;
+  position:absolute;
 }
 
 .header-right{
@@ -30,5 +31,6 @@ header{
   size:cover;
   margin:0px;
   text-align:center;
+  position:relative;
 }
 
