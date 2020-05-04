@@ -9,6 +9,7 @@
 
 .header-left h1{
   opacity:0.8;
+  font-family: 'Oswald', sans-serif;
 }
 
 .header-left p{
@@ -17,7 +18,4 @@
 
 .middle-message{
   padding:500px;
-}
-title{
-  font-family: 'Oswald', sans-serif;
 }
