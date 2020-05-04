@@ -27,3 +27,8 @@ header{
 footer{
   padding-top:200px;
 }
+
+.index-background{
+  height:200px;
+  size:cover;
+}
