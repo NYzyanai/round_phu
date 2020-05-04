@@ -15,6 +15,7 @@ header{
   opacity:0.5;
   font-family:'Oswald';
   color:#FFFFFF;
+  font-size:100px;
 }
 
 .middle-message{
@@ -22,11 +23,7 @@ header{
   padding-top: 200px;
 }
 
-footer{
-  padding-top:200px;
-}
-
 .index-background{
-  height:350px;
+  height:500px;
   size:cover;
 }
