@@ -3,7 +3,6 @@ header{
 }
 
 .header-left h1{
-  opacity:0.8;
   font-family:'Oswald';
   font-size:100px;
   color:#FFFFFF;
@@ -12,6 +11,7 @@ header{
   padding-right:20px;
   border-radius: 10px;
   position:absolute;
+  width:50%;
 }
 
 .header-right{
@@ -19,6 +19,7 @@ header{
   font-family:'Oswald';
   color:#FFFFFF;
   font-size:30px;
+  position:absolute;
 }
 
 .middle-message{
