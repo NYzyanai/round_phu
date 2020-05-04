@@ -1,17 +1,22 @@
 .header-left h1{
-  float:right;
+  float:left;
   opacity:0.8;
   font-family:'Oswald';
   font-size:100px;
   padding:20px 100px;
+  background-color:#708090;
+  color:#FFFFFF;
+}
+.header-right p{
+  opacity:0.5;
 }
 
 .header-right p{
+  float:right;
   opacity:0.5;
   font-family:'Oswald';
 }
 
 .middle-message{
   opacity:0.8;
-  font-family:'Oswald';
 }
