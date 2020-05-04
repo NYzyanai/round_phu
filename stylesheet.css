@@ -15,7 +15,8 @@ header{
   float:right;
   opacity:0.5;
   font-family:'Oswald';
-  color:#FFFFFF
+  color:#FFFFFF;
+  padding-top:200px;
 }
 
 .middle-message{
