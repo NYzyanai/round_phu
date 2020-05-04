@@ -6,7 +6,6 @@ header{
   font-family:'Oswald';
   font-size:100px;
   color:#FFFFFF;
-  background-color:#708090;
   margin:0px;
   width:100%;
   text-align:center;
@@ -14,7 +13,8 @@ header{
 
 .play-btn{
   font-family:'Shadows Into Light';
-  font-size:100px;
+  font-size:60px;
+  opacity:0.8;
   text-align:center;
   margin:0px;
   border-bottom: none;
