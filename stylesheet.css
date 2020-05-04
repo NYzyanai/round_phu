@@ -14,7 +14,7 @@ header{
   width:50%;
 }
 
-.header-right{
+.header-right a{
   font-family:'Oswald';
   color:#FFFFFF;
   font-size:30px;
@@ -27,7 +27,7 @@ header{
 }
 
 .index-background{
-  opacity:0.2;
+  opacity:0.5;
   height:800px;
   size:cover;
   margin:0px;
