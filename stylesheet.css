@@ -29,12 +29,11 @@ header{
 }
 
 .play-btn{
- box-shadow:1px 5px #708090;
+ box-shadow:1px 5px #000000;
 }
 
 .play-btn:active{
-  box-shadow:none;
-  
+  box-shadow:1px 1px #000000;
 }
 .index-background{
   opacity:0.9;
