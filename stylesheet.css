@@ -29,3 +29,7 @@ header{
   size:cover;
   margin:0px;
 }
+
+.container p{
+  float:right;
+}
