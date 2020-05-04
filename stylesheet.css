@@ -18,8 +18,9 @@ header{
   font-size:100px;
   float:right;
   margin:0px;
-  background-color:#B22222;
+  background-color:#660000;
   color:#FFFFFF;
+  padding-right:20px;
 }
 
 .middle-message{
