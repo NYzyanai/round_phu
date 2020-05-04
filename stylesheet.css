@@ -1,20 +1,18 @@
-.header-right{
-  float:right;
-}
-
-.header-right h1{
-  padding:200px;
-  opacity: 0.3;
-}
-
-.header-left{
+.header-left h1{
   float:right;
   opacity:0.8;
+  font-family:'Oswald';
+  font-size:100px;
+  padding:20px 100px;
+}
+
+.header-right p{
+  opacity:0.5;
   font-family:'Oswald';
 }
 
 .middle-message{
-  padding:500px;
+  padding:50px;
   opacity:0.8;
   font-family:'Oswald';
 }
