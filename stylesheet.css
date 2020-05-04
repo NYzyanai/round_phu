@@ -7,13 +7,9 @@
   opacity: 0.3;
 }
 
-.header-left h1{
+.header-left{
   opacity:0.8;
   font-family: 'Oswald', sans-serif;
-}
-
-.header-left p{
-  opacity:0.5;
 }
 
 .middle-message{
