@@ -1,6 +1,6 @@
 header{
   background-color:#708090;
-  float:right
+  float:left;
 }
 
 .header-left h1{
@@ -15,7 +15,6 @@ header{
   opacity:0.5;
   font-family:'Oswald';
   color:#FFFFFF;
-  padding-top:200px;
 }
 
 .middle-message{
