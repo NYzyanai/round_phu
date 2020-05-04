@@ -28,6 +28,14 @@ header{
   opacity:0.8;
 }
 
+.play-btn{
+ box-shadow:1px 5px #708090;
+}
+
+.play-btn:active{
+  box-shadow:none;
+  
+}
 .index-background{
   opacity:0.9;
   height:450px;
