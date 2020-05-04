@@ -1,3 +1,7 @@
-* {
-  box-sizing: border-box;
+.header-right{
+  float:right
+}
+
+.header-right h1{
+  padding:200px;
 }
