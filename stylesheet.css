@@ -5,7 +5,7 @@ header{
 .header-left h1{
   font-family:'Oswald';
   font-size:100px;
-  color:#FFFFFF;
+  color:rgb(35, 36, 32);
   background-color:#708090;
   margin:0px;
   border-radius: 10px;
@@ -16,10 +16,11 @@ header{
 .play-btn{
   font-family:'Oswald';
   font-size:100px;
-  float:right;
+  text-align:center;
   margin:0px;
   color:#708090;
   padding-right:20px;
+  font-weight:normal;
   box-shadow:0px 5px #000000;
   border-bottom: palegoldenrod;
 }
