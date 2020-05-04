@@ -8,6 +8,8 @@ header{
   font-size:100px;
   color:#FFFFFF;
   background-color:#708090;
+  margin:0px;
+  padding-right:20px;
 }
 
 .header-right{
@@ -19,10 +21,10 @@ header{
 
 .middle-message{
   opacity:0.8;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .index-background{
-  height:500px;
+  height:600px;
   size:cover;
 }
