@@ -17,8 +17,9 @@ header{
   font-family:'Oswald';
   font-size:100px;
   float:right;
-  padding:20px;
-  color:#B22222;
+  margin:0px;
+  background-color:#B22222;
+  color:#FFFFFF;
 }
 
 .middle-message{
