@@ -1,5 +1,5 @@
 header{
-  float:right;
+  float:left;
 }
 
 .header-left h1{
@@ -27,7 +27,7 @@ header{
 
 .index-background{
   opacity:0.9;
-  height:400px;
+  height:500px;
   width:100%;
   margin:0px;
   text-align:center;
