@@ -21,4 +21,9 @@ header{
 
 .middle-message{
   opacity:0.8;
+  padding-top: 200px;
+}
+
+footer{
+  padding-top:200px;
 }
