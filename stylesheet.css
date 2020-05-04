@@ -13,24 +13,13 @@ header{
 }
 
 .play-btn{
-  font-family:'Shadows Into Light', cursive;
+  font-family:ss'Shadows Into Light', cursive;
   font-size:100px;
   text-align:center;
   margin:0px;
-  color:#708090;
-  background-color:rgb(35, 36, 32);
+  color:rgb(35, 36, 32);
   padding-right:20px;
   font-weight:normal;
-}
-
-.middle-message{
-  opacity:0.9;
-}
-
-.play-btn:active{
-  position:relative;
-  top:5px;
-  box-shadow:none;
 }
 
 .index-background{
