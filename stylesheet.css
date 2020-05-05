@@ -2,6 +2,7 @@ body{
   background-image:url("resources/index-background.jpg");
   background-size:cover;
   height:100%;
+  margin:0 auto;
 }
 
 
@@ -12,7 +13,6 @@ body{
   color:#FFFFFF;
   margin:0px;
   width:100%;
-  text-align:center;
   opacity:0.9
 }
 
