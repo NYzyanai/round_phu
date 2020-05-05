@@ -1,6 +1,6 @@
 header{
   float:left;
-  background-image:"C:\Users\saito\Documents\JsvaScript\Round_phu\resources\index-background.jpg"
+  background-image:("/resources/index-background.jpg");
 }
 
 .header-left h1{
