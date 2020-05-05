@@ -8,10 +8,11 @@ body{
 .header-left h1{
   font-family:'Oswald';
   font-size:100px;
-  color:rgb(67, 71, 69);
+  color:#FFFFFF;
   margin:0px;
   width:100%;
   text-align:center;
+  opacity:0.9
 }
 
 .play-btn{
@@ -23,6 +24,8 @@ body{
   border-bottom: none;
   display:block;
   color:rgb(35, 36, 32);
+  background-color:White;
+  border-radius:2px;
   font-weight:normal;
 }
 
