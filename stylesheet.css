@@ -20,8 +20,10 @@ body{
   font-size:60px;
   opacity:0.8;
   display:block;
+  text-align: center;
   margin-top:200px;
   padding:20px;
+  margin:20% 50%;
   border-bottom:none;
   color:rgb(35, 36, 32);
   background-color:White;
