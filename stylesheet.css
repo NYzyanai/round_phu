@@ -1,8 +1,9 @@
-header{
-  float:left;
+body{
   background-image:url("resources/index-background.jpg");
   background-size:cover;
 }
+
+
 
 .header-left h1{
   font-family:'Oswald';
