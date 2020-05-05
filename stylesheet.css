@@ -1,6 +1,7 @@
 header{
   float:left;
   background-image:url("resources/index-background.jpg");
+  background-size:cover;
 }
 
 .header-left h1{
