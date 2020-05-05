@@ -1,6 +1,6 @@
 header{
   float:left;
-  background-image:("index-background.jpg");
+  background-image:url("index-background.jpg");
 }
 
 .header-left h1{
