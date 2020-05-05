@@ -20,9 +20,9 @@ body{
   font-size:60px;
   opacity:0.8;
   text-align:center;
-  margin:0px;
-  border-bottom: none;
-  display:block;
+  margin-top:200px;
+  padding:20px;
+  border-bottom:none;
   color:rgb(35, 36, 32);
   background-color:White;
   border-radius:2px;
