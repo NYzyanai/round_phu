@@ -1,8 +1,16 @@
-.background{
+body{
     background-image:url("resources/first-world.jpg");
     background-size:cover;
 }
 
 h1{
     color:white;
+    font-family: "M PLUS 1p";
+    font-weight:normal
+}
+
+h3{
+    color:white;
+    font-family: "M PLUS 1p";
+    font-weight:normal
 }
