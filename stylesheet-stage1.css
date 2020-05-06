@@ -1,0 +1,8 @@
+.background{
+    background-image:url("resources/first-world.jpg");
+    background-size:cover;
+}
+
+h1{
+    color:white;
+}
