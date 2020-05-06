@@ -1,16 +1,23 @@
 body{
     background-image:url("resources/first-world.jpg");
     background-size:cover;
+    width:100%;
 }
 
 h1{
-    color:white;
+    color:rgb(58, 58, 58);
     font-family: "M PLUS 1p";
-    font-weight:normal
+    font-weight:normal;
+    background-color:white;
+    opacity:0.8;
+    font-size:40px;
 }
 
 h3{
-    color:white;
+    color:rgb(58, 58, 58);
     font-family: "M PLUS 1p";
-    font-weight:normal
+    font-weight:normal;
+    background-color:white;
+    opacity:0.8;
+    font-size:25px;
 }
