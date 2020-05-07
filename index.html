@@ -12,11 +12,66 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="480" height="320"></canvas>
+<canvas
+ id="myCanvas" width="480" height="320"></canvas>
 
 <script>
 // JavaScriptのコードがここに入ります
+
+/*　重すぎて動かないっぽい
+var tri= new Image();
+tri.src ="resources/tri.png";
+*/
+
+//お決まりの2列
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+//表示する場所を動かせるようにする
+var x = canvas.width/2;
+var y = canvas.height-30; //下から30マス上
+
+//動かす
+var dx =2
+var dy=-2
+
+//ボールの半径を変数にする
+var ballradius=10;
+
+//ここからdraw
+
+function draw(){
+  //キャンバス真っ白ー
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawball();
+  y=y+dy;
+  x=x+dx;
+  //うごかすよー
+
+
+//もし壁の外にいくんだったら、で「||」だと条件指定がorになる。
+  if(y+dy<0 || y+dy>canvas.height){
+    dy=-dy;　//増やしていく数値を反転させる
+   }
+  
+  if(x+dx<0 || x+dx>canvas.width){
+    dx=-dx; //増やしていく数値を反転させる
+  }
+}
+
+function drawball(){
+  ctx.beginPath();
+  ctx.arc(x, y, ballradius, 0, Math.PI*2,true);
+  ctx.fillStyle = "#0095DD";
+  ctx.fill();
+  ctx.closePath();
+}
+
+
+//10ミリ秒ごとに描画する
+setInterval(draw, 10);
+
 </script>
 
 </body>
-</html>
+</html>s
