@@ -7,21 +7,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
  <style>
     * { padding: 0; margin: 0; }
-    canvas { background: #eee; display: block; margin: 0 auto; }
+    canvas { background:#eee; display: block; margin: 0 auto; }
   </style>
 </head>
 <body>
 
-<canvas
- id="myCanvas" width="480" height="320"></canvas>
+
+  <canvas id="myCanvas" width="480" height="320"></canvas>
 
 <script>
 // JavaScriptのコードがここに入ります
 
-
+//素材読み込み
 var tri= new Image();
 tri.src ="resources/tri.png";
-
+var backgroundP = new Image();
+backgroundP.src ="resources/index-background.jpg";
 
 //お決まりの2列
 var canvas = document.getElementById("myCanvas");
@@ -29,51 +30,136 @@ var ctx = canvas.getContext("2d");
 
 //表示する場所を動かせるようにする
 var x = canvas.width-60;
-var y = canvas.height-120; //下から20マス上
+var y = canvas.height-70; //下から70マス上
 
 //動かす
-var dx =2
-var dy =-2
+var dx =0
+var dy =0
 
+//トリリアンの大きさ決定
 var triH=50;
 var triW=50;
 
-//キー設定
+//キー初期化
 var rightPressed = false;
 var leftPressed = false;
 var upPressed=false;
 
-document.addEventListener("keyup", keyUpHandler, false);
-
 //ここからdraw
 function draw(){
-  //キャンバス真っ白ー
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundP,0,0,canvas.width, canvas.height);
 
-  drawtri();
-  //うごかすよー
-  //x=x+dx;
-  //y=y+dy;
+  x=x+dx;
+  y=y+dy;
 
-  //もし壁の外にいくんだったら、で「||」だと条件指定がorになる。
-  if(y+dy<0 || y+dy>canvas.height-triH){
-    dy=-dy;　//増やしていく数値を反転させる
-   }
 
-  if(x+dx<0|| x+dx>canvas.width-triW){
-    dx=-dx; //増やしていく数値を反転させる
+  ctx.drawImage(tri,x,y,triW,triH);
+
+
+  if(rightPressed){
+    dx=2;
+  }else if(leftPressed){
+    dx=-2;
+  }else{
+    dx=0;
   }
+  x=x+dx;
+  /*キーが押されていないときは常に重力発生、 
+  ただし地面にはめり込まない*/
+
+  if(upPressed){
+    y=y-3;
+  }else if(y<=canvas.height-triH){
+    y=y+2;
+  }
+  //うごかすよー
+
+
 }
 
+/*トリリアン描画関数
 function drawtri(){
-  var randnum = 2 + Math.floor( Math.random() * 4 );
   ctx.drawImage(tri,x,y,triW,triH);
 }
+
+//背景描画関数
+function drawbackground(){
+  ctx.drawImage(backgroundP,0,0,canvas.width, canvas.height);
+}
+
+//キャンバス消す関数
+function clearCanvas(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+//キー判定関数
+function key(){
+  if(rightPressed){
+    dx=2;
+  }else if(leftPressed){
+    dx=-2;
+  }else{
+    dx=0;
+  }
+
+  キーが押されていないときは常に重力発生、 
+  ただし地面にはめり込まない
+
+  if(upPressed){
+    y=y-3;
+  }else if(y<=canvas.height-triH){
+    y=y+2;
+  }
+}
+*/
+
+//キーイベント読み込みはじめ
+document.addEventListener("keydown",keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+        rightPressed = true;
+    }
+    else if(e.key == "Left" || e.key == "ArrowLeft") {
+        leftPressed = true;
+    }
+    else if(e.key == "Up" || e.key == "ArrowUp") {
+        upPressed = true;
+    }
+}
+
+function keyUpHandler(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+        rightPressed = false;
+    }
+    else if(e.key == "Left" || e.key == "ArrowLeft") {
+        leftPressed = false;
+    }
+    else if(e.key == "Up" || e.key == "ArrowUp") {
+        upPressed= false;
+    }
+}
+//キーイベント読み込み終わり
 
 //10ミリ秒ごとに描画する
 setInterval(draw, 10);
 
+
+/*もし壁の外にいくんだったら、で「||」だと条件指定がorになる。
+  if(y+dy<0 || y+dy>canvas.height-triH){
+    dy=-dy;　//増やしていく数値を反転させる
+   }
+  if(x+dx<0|| x+dx>canvas.width-triW){
+    dx=-dx; //増やしていく数値を反転させる
+  }
+*/
+
+
+
 </script>
 
 </body>
-</html>s
+</html>
