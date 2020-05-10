@@ -19,16 +19,25 @@
 var phu1= new Image();
 phu1.src ="resources/phu/1.PNG";
 
-var backgroundP = new Image();
-backgroundP.src ="resources/index-background.jpg";
+var bg1 = new Image();
+bg1.src ="resources/countryside/1.PNG";
+var bg2 = new Image();
+bg2.src ="resources/countryside/2.PNG";
+var bg3 = new Image();
+bg3.src ="resources/countryside/3.PNG";
+var bg4 = new Image();
+bg4.src ="resources/countryside/4.PNG";
+var bg5 = new Image();
+bg5.src ="resources/countryside/5.PNG";
+
 
 //お決まりの2列
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
 //表示する場所を動かせるようにする
-var x = canvas.width-phuW/2;
-var y = canvas.height-phuH/2; //下から70マス上
+var x = 200;
+var y = 100; //下から70マス上
 
 //動かす
 var dx =0;
@@ -36,7 +45,7 @@ var dy =0;
 
 //Phuの大きさ決定
 var phuH=200;
-var phuW=200;
+var phuW=300;
 
 //キー初期化
 var rightPressed = false;
@@ -46,33 +55,33 @@ var upPressed=false;
 //ここからdraw
 function draw(){
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(backgroundP,0,0,canvas.width, canvas.height);
+  clearCanvas();
+  drawbackground();
   x=x+dx;
   y=y+dy;
 
-  ctx.drawImage(phu1,x,y,phuW,phuH);
+  drawphu();
 
-/*
+
   if(rightPressed){
-    dx=2;
+    dx=1/2;
   }else if(leftPressed){
-    dx=-2;
+    dx=-1/2;
   }else{
     dx=0;
   }
   x=x+dx;
-  キーが押されていないときは常に重力発生、 
-  ただし地面にはめり込まない
+  /*キーが押されていないときは常に重力発生、 
+  ただし地面にはめり込まない*/
 
   if(upPressed){
-    y=y-3;
-  }else if(y<=canvas.height-phuH){
-    y=y+2;
+    y=y-1;
+  }else if(y<=canvas.height-180){
+    y=y+1;
   }
   //うごかすよー
 
-*/
+
 }
 
 //トリリアン描画関数
@@ -82,7 +91,11 @@ function drawphu(){
 
 //背景描画関数
 function drawbackground(){
-  ctx.drawImage(backgroundP,0,0,canvas.width, canvas.height);
+  ctx.drawImage(bg1,0,0,canvas.width, canvas.height);
+  ctx.drawImage(bg2,0,0,canvas.width, canvas.height);
+  ctx.drawImage(bg3,0,0,canvas.width, canvas.height);
+  ctx.drawImage(bg4,0,0,canvas.width, canvas.height);
+  ctx.drawImage(bg5,0,0,canvas.width, canvas.height);
 }
 
 //キャンバス消す関数
@@ -93,9 +106,9 @@ function clearCanvas(){
 //キー判定関数
 function key(){
   if(rightPressed){
-    dx=2;
+    dx=1;
   }else if(leftPressed){
-    dx=-2;
+    dx=-1;
   }else{
     dx=0;
   }
