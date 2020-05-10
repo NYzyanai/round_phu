@@ -75,7 +75,7 @@ var ctx = canvas.getContext("2d");
 
 //表示する場所を動かせるようにする
 var x = 400;
-var y = 100; //下から70マス上
+var y = 160; //下から70マス上
 
 //動かす
 var dx =0;
@@ -124,23 +124,27 @@ function draw(){
       dx=4;
     }*/
   }else if(leftPressed){
-    if(i>=18){
-    i=1;
-    drawphu(i);
-  }else{
-    i=i+1
-    drawphu(i);
-  }
+    if(x>=canvas.width/2){
+      dx=-4
+    }else{
+      dx=0;
+    }
 
-    dx=-4;
+     if(i>=18){
+        i=1;
+        drawphu(i);
+     }else{
+        i=i+1
+        drawphu(i);
+     }
+
   }else{
     if(i>=12){
-    i=1;
-    drawphu(i);
-  }else{
-    drawphu(1);
-  }
-
+      i=1;
+     drawphu(i);
+    }else{
+     drawphu(1);
+    }
     dx=0;
   }
   /*キーが押されていないときは常に重力発生、 
