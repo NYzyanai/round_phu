@@ -64,13 +64,17 @@ function draw(){
 
 
   if(rightPressed){
-    dx=1/2;
+
+    if(x+220>canvas.width){
+      dx=0;
+    }else{
+      dx=1/2;
+    }
   }else if(leftPressed){
     dx=-1/2;
   }else{
     dx=0;
   }
-  x=x+dx;
   /*キーが押されていないときは常に重力発生、 
   ただし地面にはめり込まない*/
 
