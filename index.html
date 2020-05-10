@@ -94,26 +94,46 @@ var upPressed=false;
 
 var i =1;
 
+var bgx=0
+var dbgx=0
 //ここからdraw
+
 function draw(){
 
   clearCanvas();
-  drawbackground();
+  drawbg1();
+  ctx.drawImage(bg2,bgx/3,0,canvas.width, canvas.height);
+  ctx.drawImage(bg3,bgx/2,0,canvas.width, canvas.height);
+  ctx.drawImage(bg4,bgx,0,canvas.width, canvas.height);
+  ctx.drawImage(bg5,bgx/5,0,canvas.width, canvas.height);
+  ctx.drawImage(bg2,bgx/3-canvas.width,0,canvas.width, canvas.height);
+  ctx.drawImage(bg3,bgx/2-canvas.width,0,canvas.width, canvas.height);
+  ctx.drawImage(bg4,bgx-canvas.width,0,canvas.width, canvas.height);
+  ctx.drawImage(bg5,bgx/5-canvas.width,0,canvas.width, canvas.height);
+  ctx.drawImage(bg2,bgx/3-canvas.width*2,0,canvas.width, canvas.height);
+  ctx.drawImage(bg3,bgx/2-canvas.width*2,0,canvas.width, canvas.height);
+  ctx.drawImage(bg4,bgx-canvas.width*2,0,canvas.width, canvas.height);
+  ctx.drawImage(bg5,bgx/5-canvas.width*2,0,canvas.width, canvas.height);
   x=x+dx;
   y=y+dy;
+  bgx=dbgx+bgx
   
-//dxが横、dyが縦。
+ //dxが横、dyが縦。
 
   //右キーを押されているとき
   if(rightPressed){
       drawphuright();
       dx=0;　//進まない
+      dbgx=0
   }else if(leftPressed){
     //左キーを押されているとき
     if(x>=canvas.width/2){ 　//半数以下のときはPhuは移動する
       dx=-4
+      dbgx=0
     }else{　//半数にまで言ったらphuは止まる
       dx=0;
+      dbgx=2
+
     }
 
     //Phuの描画
@@ -129,6 +149,7 @@ function draw(){
   }else{
     drawphu(1);
     dx=0;
+    dbgx=0;
   }
 
  /*キーが押されていないときは常に重力発生、 
@@ -154,12 +175,9 @@ function drawphuright(){
 }
 
 //背景描画関数
-function drawbackground(){
+function drawbg1(){
   ctx.drawImage(bg1,0,0,canvas.width, canvas.height);
-  ctx.drawImage(bg2,0,0,canvas.width, canvas.height);
-  ctx.drawImage(bg3,0,0,canvas.width, canvas.height);
-  ctx.drawImage(bg4,0,0,canvas.width, canvas.height);
-  ctx.drawImage(bg5,0,0,canvas.width, canvas.height);
+
 }
 
 //キャンバス消す関数
