@@ -98,38 +98,8 @@ function draw(){
   
  //dxが横、dyが縦。
 
-  //右キーを押されているとき
-  if(rightPressed){
-      drawphuright();
-      dx=0;　//進まない
-      dbgx=0
-  }else if(leftPressed){
-    //左キーを押されているとき
-    if(x>=canvas.width/2){ 　//半数以下のときはPhuは移動する
-      dx=-4
-      dbgx=0
-    }else{　//半数にまで言ったらphuは止まる
-      dx=0;
-      dbgx=2
-
-    }
-
-    //Phuの描画
-     if(i>=6){
-      //最終枚数目になったら1枚目を入れる
-        i=1;
-        drawphu(i);
-     }else{
-       //枚数が増えていく
-        i=i+1/7;
-        //phuの描画速度遅らせています
-        drawphu(Math.floor(i));
-     }
-  }else{
-    drawphu(1);
-    dx=0;
-    dbgx=0;
-  }
+  //phuの左右移動
+  rfkey();
 
  /*キーが押されていないときは常に重力発生、 
   ただし地面にはめり込まない*/
@@ -164,24 +134,40 @@ function clearCanvas(){
 }
 
 //キー判定関数
-function key(){
+function rfkey(){
+  //右キーを押されているとき
   if(rightPressed){
-    dx=1;
+      drawphuright();
+      dx=0;　//進まない
+      dbgx=0
   }else if(leftPressed){
-    dx=-1;
+    //左キーを押されているとき
+    if(x>=canvas.width/2){ 　//半数以下のときはPhuは移動する
+      dx=-2;
+      dbgx=0;
+    }else{　//半数にまで言ったらphuは止まる
+      dx=0;
+      dbgx=3/2;
+    }
+
+    //Phuの描画
+     if(i>=6){
+      //最終枚数目になったら1枚目を入れる
+        i=1;
+        drawphu(i);
+     }else{
+       //枚数が増えていく
+        i=i+1/10;
+        //phuの描画速度遅らせています
+        drawphu(Math.floor(i));
+     }
   }else{
+    drawphu(1);
     dx=0;
-  }
-
-  //キーが押されていないときは常に重力発生、 
-  //ただし地面にはめり込まない
-
-  if(upPressed){
-    y=y-3;
-  }else if(y<=canvas.height-triH){
-    y=y+2;
+    dbgx=0;
   }
 }
+
 
 
 //キーイベント読み込みはじめ
