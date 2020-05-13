@@ -197,6 +197,14 @@ function keyUpHandler(e) {
         upPressed= false;
     }
 }
+
+function ontouchmove(e) {
+    // 画面のスクロールを防止する
+      e.preventDefault();
+      touch=True;
+      console.log("触られています！！！！");
+    // タッチイベントの処理をここに記述
+};
 //キーイベント読み込み終わり
 
 //10ミリ秒ごとに描画する
