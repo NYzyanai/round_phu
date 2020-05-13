@@ -68,6 +68,7 @@ var phuW=80;
 var rightPressed = false;
 var leftPressed = false;
 var upPressed=false;
+var touch=false;
 
 var i =1;
 
@@ -109,6 +110,8 @@ function draw(){
     y=y+1;
   }
   //うごかすよー
+  
+  console.log(touch);
 
 }
 
@@ -140,7 +143,7 @@ function rfkey(){
       drawphuright();
       dx=0;　//進まない
       dbgx=0
-  }else if(leftPressed){
+  }else if(leftPressed || touch){
     //左キーを押されているとき
     if(x>=canvas.width/2){ 　//半数以下のときはPhuは移動する
       dx=-2;
@@ -166,6 +169,7 @@ function rfkey(){
     dx=0;
     dbgx=0;
   }
+
 }
 
 
@@ -173,6 +177,9 @@ function rfkey(){
 //キーイベント読み込みはじめ
 document.addEventListener("keydown",keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener('touchstart',ontouchstart,false);
+document.addEventListener('touchend',ontouchend,false);
+
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -198,13 +205,17 @@ function keyUpHandler(e) {
     }
 }
 
-function ontouchmove(e) {
+function ontouchstart(e) {
     // 画面のスクロールを防止する
-      e.preventDefault();
-      touch=True;
-      console.log("触られています！！！！");
+        touch=true;
+        console.log("触られています！！！！");
     // タッチイベントの処理をここに記述
-};
+}
+
+function ontouchend(e){
+    touch=false;
+    console.log("触るのをやめました！！！！！");
+}
 //キーイベント読み込み終わり
 
 //10ミリ秒ごとに描画する
