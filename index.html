@@ -19,39 +19,16 @@
 var phu1= new Image();
 phu1.src ="resources/phu/1.PNG";
 var phu2= new Image();
-phu2.src ="resources/phu/1.PNG";
+phu2.src ="resources/phu/2.PNG";
 var phu3= new Image();
-phu3.src ="resources/phu/1.PNG";
+phu3.src ="resources/phu/3.PNG";
 var phu4= new Image();
-phu4.src ="resources/phu/2.PNG";
+phu4.src ="resources/phu/4.PNG";
 var phu5= new Image();
-phu5.src ="resources/phu/2.PNG";
+phu5.src ="resources/phu/5.PNG";
 var phu6= new Image();
-phu6.src ="resources/phu/2.PNG";
-var phu7= new Image();
-phu7.src ="resources/phu/3.PNG";
-var phu8= new Image();
-phu8.src ="resources/phu/3.PNG";
-var phu9= new Image();
-phu9.src ="resources/phu/3.PNG";
-var phu10= new Image();
-phu10.src ="resources/phu/4.PNG";
-var phu11= new Image();
-phu11.src ="resources/phu/4.PNG";
-var phu12= new Image();
-phu12.src ="resources/phu/4.PNG";
-var phu13= new Image();
-phu13.src ="resources/phu/5.PNG";
-var phu14= new Image();
-phu14.src ="resources/phu/5.PNG";
-var phu15= new Image();
-phu15.src ="resources/phu/5.PNG";
-var phu16= new Image();
-phu16.src ="resources/phu/6.PNG";
-var phu17= new Image();
-phu17.src ="resources/phu/6.PNG";
-var phu18= new Image();
-phu18.src ="resources/phu/6.PNG";
+phu6.src ="resources/phu/6.PNG";
+
 
 
 var phuRight= new Image();
@@ -102,6 +79,7 @@ function draw(){
 
   clearCanvas();
   drawbg1();
+  //この背景描画頭悪すぎるから何とかする
   ctx.drawImage(bg2,bgx/3,0,canvas.width, canvas.height);
   ctx.drawImage(bg3,bgx/2,0,canvas.width, canvas.height);
   ctx.drawImage(bg4,bgx,0,canvas.width, canvas.height);
@@ -137,14 +115,15 @@ function draw(){
     }
 
     //Phuの描画
-     if(i>=18){
+     if(i>=6){
       //最終枚数目になったら1枚目を入れる
         i=1;
         drawphu(i);
      }else{
        //枚数が増えていく
-        i=i+1
-        drawphu(i);
+        i=i+1/7;
+        //phuの描画速度遅らせています
+        drawphu(Math.floor(i));
      }
   }else{
     drawphu(1);
@@ -166,7 +145,6 @@ function draw(){
 //主人公描画関数
 function drawphu(i){
   ctx.drawImage(eval("phu"+i),x,y,phuW,phuH);
-  console.log(eval("phu"+i));
 }
 
 //右向きの場合
@@ -236,7 +214,7 @@ function keyUpHandler(e) {
 //キーイベント読み込み終わり
 
 //10ミリ秒ごとに描画する
-setInterval(draw,40);
+setInterval(draw,20);
 
 
 /*もし壁の外にいくんだったら、で「||」だと条件指定がorになる。
